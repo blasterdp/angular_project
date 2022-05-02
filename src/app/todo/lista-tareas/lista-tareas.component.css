@@ -1,0 +1,57 @@
+.formuladio-add {
+    position: relative;
+    left: -200px;
+    top: 17px;
+}
+
+.list-task {
+    position: absolute;
+    left: 600px;
+    top: 195px;
+    background-color: antiquewhite;
+    width: 500px;
+    margin-left: 15px;
+    border-radius: 20px;
+    max-height: 400px;
+    overflow: auto;
+    min-height: 400px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 19px;
+    font-style: oblique;
+    padding: 5px;
+}
+
+input[type=text] {
+    display: block;
+    padding: 15px;
+    margin: 15px;
+    font-size: 16px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 2px 2px #cac9c9;
+    border: 0px;
+}
+input[type=checkbox] {
+    width: 25px;
+    height: 20px;
+    vertical-align: middle;
+}
+button {
+    padding: 15px;
+    background-color: #1a76d2;
+    width: 432px;
+    margin: 15px;
+    font-size: 16px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 2px 2px #cac9c9;
+    border: 0px;
+}
