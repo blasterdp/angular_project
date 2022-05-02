@@ -1,20 +1,18 @@
-.formuladio-add {
-    position: relative;
-    left: -200px;
-    top: 17px;
+.container {
+    text-align: -webkit-center;
 }
 
+.formuladio-add {}
+
 .list-task {
-    position: absolute;
-    left: 600px;
-    top: 195px;
-    background-color: antiquewhite;
-    width: 500px;
+    background-color: transparent;
     margin-left: 15px;
     border-radius: 20px;
     max-height: 400px;
     overflow: auto;
     min-height: 400px;
+    text-align: initial;
+    width: 85%;
 }
 
 ul {
@@ -37,11 +35,13 @@ input[type=text] {
     box-shadow: 2px 2px #cac9c9;
     border: 0px;
 }
+
 input[type=checkbox] {
     width: 25px;
     height: 20px;
     vertical-align: middle;
 }
+
 button {
     padding: 15px;
     background-color: #1a76d2;
