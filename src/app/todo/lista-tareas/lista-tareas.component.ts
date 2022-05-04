@@ -35,45 +35,51 @@ export class ListaTareasComponent implements OnInit {
     if (this.formulario.value.taskText != "") {
       this.todo.push({
         value: `check-${this.todo.length}`,
-        description: this.formulario.value.taskText
+        description: this.formulario.value.taskText,
+        checked: "checked",
+        createAt: new Date()
       });
-      this.formulario.controls["taskText"].setValue("")
-    }
 
+      localStorage.setItem('formArray', JSON.stringify(this.todo));
+      this.formulario.controls["taskText"].setValue("")
+      console.log(this.todo);
+      
+    }
   }
 
   onCheckChange(event: any) {
     this.formArray = this.formulario.get('myChoices') as FormArray;
-
+    
     /* Selected */
     if (event.target.checked) {
       // Add a new control in the arrayForm
-      if (JSON.stringify(this.formArray.value).indexOf(event.target.id) == -1) {
-        this.formArray.push(new FormControl({
+      if (JSON.stringify(this.todo).indexOf(event.target.id) == -1) {
+        this.todo.push(new FormControl({
           value: event.target.id,
-          description: event.target.name
+          description: event.target.name,
+          checked: "checked",
+          createAt: new Date()
         }));
+      } else {
+        this.formArray.value.forEach((task: any) => { 
+          if (task.value == event.target.id) {
+            task.checked = "checked"
+          }
+        })
+        
       }
+    } else {
+      
+      //this.formArray.value.splice(event.target.id.split("-")[1], 1);
+      this.todo.splice(event.target.id.split("-")[1], 1);
+      localStorage.clear();
+      localStorage.setItem('formArray', JSON.stringify(this.todo));
+
+      console.log("cambia", event.target.id.split("-")[1]);
+      console.log("cambia", this.formArray.value);
+      
     }
-    /* unselected */
-    else {
-      // find the unselected element
-      let i: number = 0;
-
-      this.formArray.controls.forEach((ctrl: any) => {
-        if (ctrl.value.value == event.target.id) {
-          // Remove the unselected element from the arrayForm
-          this.formArray?.removeAt(i);
-          return;
-        }
-
-        i++;
-      });
-    }
-    localStorage.clear();
-    localStorage.setItem('formArray', JSON.stringify(this.formArray.value));
-    console.log(this.formArray.value);
-
+    //console.log(JSON.parse(localStorage.getItem('formArray')!));
   }
 
 }

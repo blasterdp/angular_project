@@ -5,14 +5,15 @@
 .formuladio-add {}
 
 .list-task {
-    background-color: transparent;
     margin-left: 15px;
     border-radius: 20px;
     max-height: 400px;
     overflow: auto;
     min-height: 400px;
     text-align: initial;
-    width: 85%;
+    width: 800px;
+    background-color: gainsboro;
+    box-shadow: 2px 2px #cac9c9;
 }
 
 ul {
@@ -54,4 +55,10 @@ button {
     border-radius: 15px;
     box-shadow: 2px 2px #cac9c9;
     border: 0px;
+}
+
+.fecha {
+    position: relative;
+    left: 5%;
+    font-size: small;
 }
