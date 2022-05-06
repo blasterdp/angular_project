@@ -2,7 +2,11 @@
     <div class="list-task">
         <ul>
             <li *ngFor="let item of todo; let i = index;">
-                <input id="check-{{i}}" name="{{item.description}}" type="checkbox" [checked]="item.checked"
+                <input
+                    id="check-{{i}}" 
+                    [name]="item.description" 
+                    type="checkbox"
+                    [checked]="item.checked"
                     (change)="onCheckChange($event)">
                 <label for="check{{i}}">
                     {{item.description}}
@@ -15,7 +19,6 @@
         <form [formGroup]="formulario">
             <input type="text" formControlName="taskText" placeholder="Add task">
             <button (click)="addTask($event)">Add</button>
-
         </form>
     </div>
 </div>
