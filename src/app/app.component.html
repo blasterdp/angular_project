@@ -1,2 +1,5 @@
-
 <router-outlet></router-outlet>
+<h5>Input: {{val1}}</h5>
+<input type="number" pInputText pKeyFilter="num" placeholder="Numbers" [(ngModel)]="val1" /> <!-- readonly -->
+<hr>
+<p-slider [(ngModel)]="val1"></p-slider>
