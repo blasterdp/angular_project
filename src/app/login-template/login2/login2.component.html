@@ -1,0 +1,15 @@
+<h1>Con Formulario basado en Plantillas</h1>
+<div class="sign-container">
+    <form action="#" method="post">
+        <input [(ngModel)]="email" type="email" name="Email" id="email" placeholder="Email">
+        
+        <input [(ngModel)]="password" type="password" name="Password" id="password" id="password" placeholder="Password">
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+<hr>
+<br>
+Email: {{email | uppercase}}
+<br>
+<br>
+Password: {{password}}

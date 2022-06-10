@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginTemplateModule } from './login-template/login-template.module';
 import { LoginModule } from './login/login.module';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { LoginModule } from './login/login.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    LoginTemplateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

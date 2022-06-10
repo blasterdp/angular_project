@@ -1,27 +1,50 @@
-# AngularProjectMain
+# Formularios
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+## Angular proporciona dos enfoques diferentes para manejar la entrada del usuario a través de formularios: 
 
-## Development server
+- Reactivo: Proporcionan acceso directo y explícito al modelo de objetos de formularios subyacente. En comparación con los formularios basados ​​en plantillas, son más robustos: son más escalables, reutilizables y comprobables. Si los formularios son una parte clave de su aplicación, o si ya está usando patrones reactivos para crear su aplicación, use formularios reactivos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Basado en plantillas: Se basan en las directivas de la plantilla para crear y manipular el modelo de objetos subyacente. Son útiles para agregar un formulario simple a una aplicación, como un formulario de registro de lista de correo electrónico. Son fáciles de agregar a una aplicación, pero no escalan tan bien como los formularios reactivos. Si tiene requisitos de formulario muy básicos y una lógica que se puede administrar únicamente en la plantilla, los formularios basados ​​en plantillas podrían ser una buena opción.
 
-## Code scaffolding
+## Clases de base de formulario común
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Tanto los formularios reactivos como los controlados por plantillas se basan en las siguientes clases base.
 
-## Build
+- FormControl: Rastrea el valor y el estado de validación de un control de formulario individual.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- FormGroup: Realiza un seguimiento de los mismos valores y estado para una colección de controles de formulario.
 
-## Running unit tests
+- FormArray: Realiza un seguimiento de los mismos valores y estado para una matriz de controles de formulario.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- ControlValueAccessor: Crea un puente entre FormControllas instancias de Angular y los elementos DOM integrados.
 
-## Running end-to-end tests
+## Formularios Reactivos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Deficnición de un control
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
-## Further help
+@Component({
+  selector: 'app-reactive-favorite-color',
+  template: `
+    Favorite Color: <input type="text" [formControl]="favoriteColorControl">
+  `
+})
+export class FavoriteColorComponent {
+  favoriteColorControl = new FormControl('');
+}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Formularios Basados en plantillas
+
+- Deficnición de un control
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-template-favorite-color',
+  template: `
+    Favorite Color: <input type="text" [(ngModel)]="favoriteColor">
+  `
+})
+export class FavoriteColorComponent {
+  favoriteColor = '';
+}

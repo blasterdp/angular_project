@@ -1,7 +1,37 @@
+<h1>Con Formulario Reactivo</h1>
 <div class="sign-container">
     <form action="#" method="post">
-        <input type="email" name="Email" id="email" placeholder="Email">
-        <input type="password" name="password" id="password" placeholder="Password">
+        <input [formControl]="email" type="email" name="Email" id="email" placeholder="Email" >
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+
+            <div *ngIf="email.errors?.['required']">
+                Correo electronico es requerido.
+            </div>
+            <div *ngIf="email.errors?.['minlength']">
+                El correo electrónico debe tener al menos 7 caracteres.
+            </div>
+            <div *ngIf="email.errors?.['forbiddenname']">
+                El correo electrónico no puede ser Bob.
+            </div>
+
+        </div>
+        <input [formControl]="password" type="password" name="Password" id="password" id="password"
+            placeholder="Password">
         <button type="submit">Enviar</button>
     </form>
 </div>
+
+<hr>
+
+<p>
+    <b>Email:</b> {{email.value | uppercase}}
+</p>
+<p>
+    <b>Invalid:</b> {{email.invalid}}
+    <b>Touched:</b> {{email.touched}}
+    <b>Dirty:</b> {{email.dirty}}
+    <b>Errors:</b> {{email.errors | json}}
+</p>
+
+<br>
+Password: {{password.value}}
