@@ -2,7 +2,7 @@
 <div class="sign-container">
     <form action="#" method="post">
         <input [formControl]="email" type="email" name="Email" id="email" placeholder="Email" >
-        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alerta">
 
             <div *ngIf="email.errors?.['required']">
                 Correo electronico es requerido.
@@ -22,16 +22,18 @@
 </div>
 
 <hr>
+<div style="clear:both">
 
-<p>
-    <b>Email:</b> {{email.value | uppercase}}
-</p>
-<p>
-    <b>Invalid:</b> {{email.invalid}}
-    <b>Touched:</b> {{email.touched}}
-    <b>Dirty:</b> {{email.dirty}}
-    <b>Errors:</b> {{email.errors | json}}
-</p>
-
-<br>
-Password: {{password.value}}
+    <p>
+        <b>Email:</b> {{email.value | uppercase}}
+    </p>
+    <p>
+        <b>Invalid:</b> {{email.invalid}}
+        <b>Touched:</b> {{email.touched}}
+        <b>Dirty:</b> {{email.dirty}} <br>
+        <b>Errors:</b> {{email.errors | json}}
+    </p>
+    
+    <br>
+    Password: {{password.value}}
+</div>

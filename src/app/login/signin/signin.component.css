@@ -36,3 +36,7 @@ button {
         width: 631px;
     }
 }
+
+.alerta{
+    color: rgb(170, 13, 13);
+}
