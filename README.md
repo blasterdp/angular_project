@@ -1,6 +1,6 @@
 # AngularProjectMain
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
 ## Development server
 
