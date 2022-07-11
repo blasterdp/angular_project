@@ -23,6 +23,7 @@ export class CalendarComponent implements OnInit {
       editable: true, 
       draggable: true,
       resizable: true,
+
     },
   ];
   options: any = {
@@ -33,6 +34,9 @@ export class CalendarComponent implements OnInit {
     dateClick: this.handleDateClick.bind(this), 
     select: function(info:any) {
       console.log('selected ' + info.startStr + ' to ' + info.endStr);
+    },
+    eventClick: function(info:any) {
+      console.log('clicked ' + info.event.title);
     },
     header: {
       left: 'prev,today,next',
