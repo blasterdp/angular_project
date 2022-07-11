@@ -38,6 +38,14 @@ export class CalendarComponent implements OnInit {
     eventClick: function(info:any) {
       console.log('clicked ' + info.event.title);
     },
+    eventDrop: function(info:any) {
+      console.log('event dropped ' + info.event.title);
+    },
+    eventResize: function(info:any) {
+      console.log('event resized ' + info.event.title);
+      console.log('event start ' + info.event.start);
+      console.log('event end ' + info.event.end);
+    },
     header: {
       left: 'prev,today,next',
       center: 'title',
