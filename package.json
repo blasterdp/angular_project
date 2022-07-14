@@ -21,6 +21,7 @@
     "@fullcalendar/core": "4.2",
     "@fullcalendar/daygrid": "4.2",
     "@fullcalendar/interaction": "4.2",
+    "@fullcalendar/list": "4.2",
     "@fullcalendar/timegrid": "4.2",
     "primeicons": "^5.0.0",
     "primeng": "^14.0.0-rc.1",
